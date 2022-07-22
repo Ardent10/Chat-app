@@ -44,7 +44,7 @@ io.on('connection', socket=>{
 
 
     //listen for chatMessage
-    socket.on('chatMessage', msg=>{
+    socket.on('chatMessage', msg=>{ 
 
         const user = getCurrentUser(socket.id);
 
