@@ -56,9 +56,8 @@ io.on('connection', socket=>{
         const user = userLeave(socket.id);
 
         if(user){
-
             io.to(user.room).emit('message',formatMessage(BotName,`${user.username } has left the chat`));
-
+            
             // Send users and room info
             io.to(user.room).emit('roomUsers',{
                  room: user.room,
@@ -69,5 +68,5 @@ io.on('connection', socket=>{
 
 });
 
-server.listen(process.env.PORT||3000, ()=>
+server.listen(process.env.PORT||5000, ()=>
     console.log("Server running on port 3000"));
